@@ -1,0 +1,178 @@
+@import "variables";
+@import "utility";
+
+body {
+  line-height: inherit;
+  color: $primary;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  margin: 0 1rem;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    width: 100%;
+    background-color: $col-white;
+    z-index: 9999999;
+  }
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    width: 100%;
+    background-color: $col-white;
+    z-index: 9999999;
+  }
+}
+
+main {
+  max-width: 1920px;
+  margin: auto;
+  width: 100%;
+  background-color: $bg-color;
+  margin-top: 1rem;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1rem;
+    height: 100%;
+    background-color: $col-white;
+    z-index: 9999999;
+  }
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1rem;
+    height: 100%;
+    background-color: $col-white;
+    z-index: 9999999;
+  }
+}
+
+.nav-drop-shadow {
+  filter: drop-shadow(0 10px 8px rgba(38, 38, 38, 0.04))
+    drop-shadow(0 4px 3px rgba(38, 38, 38, 0.1));
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  padding: 0 2rem;
+}
+
+.container {
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 200;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 2.7rem;
+    font-weight: 700;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      height: 0.2rem;
+      width: 90%;
+      background-color: $accent-two;
+      bottom: -1rem;
+      border-radius: 30px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      height: 0.2rem;
+      width: 90%;
+      background-color: $accent-two;
+      bottom: -1.4rem;
+      border-radius: 30px;
+    }
+  }
+}
+
+/*---------------------------------------------------- 
+header Section
+----------------------------------------------------*/
+@import "nav";
+/*---------------------------------------------------- 
+Main Section
+----------------------------------------------------*/
+@import "main";
+
+/*---------------------------------------------------- 
+ Map Section
+----------------------------------------------------*/
+@import "map";
+/*---------------------------------------------------- 
+ Footer Section
+----------------------------------------------------*/
+@import "footer";
+/*---------------------------------------------------- 
+ Endless Section
+----------------------------------------------------*/
+@import "endless";
+/*---------------------------------------------------- 
+ Contact Section
+----------------------------------------------------*/
+@import "contact";
+/*---------------------------------------------------- 
+ Section
+----------------------------------------------------*/
+
+.main-sec {
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  main {
+    margin-top: 2rem;
+
+    &::before {
+      width: 2rem;
+    }
+    &::after {
+      width: 2rem;
+    }
+  }
+  body {
+    margin: 0 2rem;
+
+    &::before {
+      height: 2rem;
+    }
+    &::after {
+      height: 2rem;
+    }
+  }
+}
